@@ -14,6 +14,38 @@ public abstract class Account {
         this.holder = holder;
     }
 
+    public Integer getNum() {
+        return num;
+    }
+
+    public void setNum(Integer num) {
+        this.num = num;
+    }
+
+    public Integer getAgency() {
+        return agency;
+    }
+
+    public void setAgency(Integer agency) {
+        this.agency = agency;
+    }
+
+    public Double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(Double balance) {
+        this.balance = balance;
+    }
+
+    public Client getHolder() {
+        return holder;
+    }
+
+    public void setHolder(Client holder) {
+        this.holder = holder;
+    }
+
     public void deposit(Double value){
 
     }
