@@ -11,7 +11,7 @@ public class CheckingAccount extends Account {
         super(num, agency, balance, holder);
     }
 
-    public Double getBalance() {
+    public double getBalance() {
         return balance;
     }
 

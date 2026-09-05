@@ -30,7 +30,7 @@ public abstract class Account {
         this.agency = agency;
     }
 
-    public Double getBalance() {
+    public double getBalance() {
         return balance;
     }
 
