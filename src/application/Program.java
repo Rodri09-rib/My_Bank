@@ -16,7 +16,10 @@ public class Program {
         System.out.println("-------------------------------");
         System.out.println("  MENU ");
         System.out.println("1 - Cadastrar conta corrente.");
+        System.out.println("2 - Cadastrar conta poupança.");
+        System.out.println(" ");
         System.out.print("Escolha uma opção: ");
+        System.out.println(" ");
 
         int swt = sc.nextInt();
         sc.nextLine(); // Limpa o buffer do teclado após ler o inteiro
@@ -34,10 +37,10 @@ public class Program {
                 System.out.print("Informe seu número de telefone: ");
                 String phone = sc.nextLine();
 
-                System.out.print("Digite um número para sua conta: ");
+                System.out.print("Digite o número para sua conta: ");
                 int num = sc.nextInt();
 
-                System.out.print("Informe um número para sua agência: ");
+                System.out.print("Informe o número para sua agência: ");
                 int agency = sc.nextInt();
 
                 System.out.print("Digite seu saldo inicial: ");
@@ -54,6 +57,44 @@ public class Program {
                 dados.put("type", "CORRENTE");
 
                 bankService.createAccount(dados);
+                System.out.println("Conta criada e salva!");
+                break;
+
+            case 2:
+                System.out.println(" - Cadastro de conta poupança -");
+
+                System.out.println("Informe o seu nome completo: ");
+                String holder1 = sc.nextLine();
+
+                System.out.println("Informe seu CPF: ");
+                String cpf1 = sc.nextLine();
+
+                System.out.println("Informe seu número de telefone: ");
+                String phone1 = sc.nextLine();
+
+                System.out.println("Digite o número de sua conta: ");
+                int num1 = sc.nextInt();
+
+                System.out.println("Informe o número de sua agência: ");
+                int agency1 = sc.nextInt();
+
+                System.out.println("Digite seu saldo inicial: ");
+                double balance1 = sc.nextDouble();
+
+                System.out.println("Digite a taxa de rendimento: ");
+                double yeldRate = sc.nextDouble();
+
+                Map<String, Object> dados1 = new HashMap<>();
+                dados1.put("name", holder1);
+                dados1.put("cpf", cpf1);
+                dados1.put("phone", phone1);
+                dados1.put("number", num1);
+                dados1.put("agency", agency1);
+                dados1.put("balance", balance1);
+                dados1.put("taxaRendimento", yeldRate);
+                dados1.put("type", "POUPANCA");
+
+                bankService.createAccount(dados1);
                 System.out.println("Conta criada e salva!");
                 break;
 
