@@ -11,96 +11,128 @@ public class Program {
         Scanner sc = new Scanner(System.in);
         BankService bankService = new BankService();
 
-        System.out.println("-------------------------------");
-        System.out.println("           Banco-RRF           ");
-        System.out.println("-------------------------------");
-        System.out.println("  MENU ");
-        System.out.println("1 - Cadastrar conta corrente.");
-        System.out.println("2 - Cadastrar conta poupança.");
-        System.out.println(" ");
-        System.out.print("Escolha uma opção: ");
-        System.out.println(" ");
+        boolean run = true;
 
-        int swt = sc.nextInt();
-        sc.nextLine(); // Limpa o buffer do teclado após ler o inteiro
+        while (run) {
+            System.out.println("-------------------------------");
+            System.out.println("           Banco-RRF           ");
+            System.out.println("-------------------------------");
+            System.out.println("  MENU ");
+            System.out.println("1 - Cadastrar conta corrente.");
+            System.out.println("2 - Cadastrar conta poupança.");
+            System.out.println("3 - Entrar na conta.");
+            System.out.println(" ");
+            System.out.print("Escolha uma opção: ");
+            System.out.println(" ");
 
-        switch (swt) {
-            case 1:
-                System.out.println("- Cadastro de conta corrente -");
+            int swt = sc.nextInt();
+            sc.nextLine(); // Limpa o buffer do teclado após ler o inteiro
 
-                System.out.print("Informe o seu nome completo: ");
-                String holder = sc.nextLine();
+            switch (swt) {
+                case 1:
+                    System.out.println("- Cadastro de conta corrente -");
 
-                System.out.print("Informe seu CPF: ");
-                String cpf = sc.nextLine();
+                    System.out.print("Informe o seu nome completo: ");
+                    String holder = sc.nextLine();
 
-                System.out.print("Informe seu número de telefone: ");
-                String phone = sc.nextLine();
+                    System.out.print("Informe seu CPF: ");
+                    String cpf = sc.nextLine();
 
-                System.out.print("Digite o número para sua conta: ");
-                int num = sc.nextInt();
+                    System.out.print("Informe seu número de telefone: ");
+                    String phone = sc.nextLine();
 
-                System.out.print("Informe o número para sua agência: ");
-                int agency = sc.nextInt();
+                    System.out.print("Digite o número para sua conta: ");
+                    int num = sc.nextInt();
 
-                System.out.print("Digite seu saldo inicial: ");
-                double balance = sc.nextDouble();
+                    System.out.print("Informe o número para sua agência: ");
+                    int agency = sc.nextInt();
 
-                // Monta o Map esperado pelo método createAccount
-                Map<String, Object> dados = new HashMap<>();
-                dados.put("name", holder);
-                dados.put("cpf", cpf);
-                dados.put("phone", phone);
-                dados.put("number", num);
-                dados.put("agency", agency);
-                dados.put("balance", balance);
-                dados.put("type", "CORRENTE");
+                    System.out.print("Digite seu saldo inicial: ");
+                    double balance = sc.nextDouble();
+                    sc.nextLine();
 
-                bankService.createAccount(dados);
-                System.out.println("Conta criada e salva!");
-                break;
+                    // Monta o Map esperado pelo método createAccount
+                    Map<String, Object> dados = new HashMap<>();
+                    dados.put("name", holder);
+                    dados.put("cpf", cpf);
+                    dados.put("phone", phone);
+                    dados.put("number", num);
+                    dados.put("agency", agency);
+                    dados.put("balance", balance);
+                    dados.put("type", "CORRENTE");
 
-            case 2:
-                System.out.println(" - Cadastro de conta poupança -");
+                    bankService.createAccount(dados);
+                    System.out.println("Conta criada e salva!");
+                    System.out.println("Deseja voltar? s/n");
+                    String resp = sc.nextLine();
+                    if (resp.equalsIgnoreCase("s")) {
+                        run = true;
+                    } else if (resp.equalsIgnoreCase("n")) {
+                        run = false;
+                        System.out.println ("Programa encerrado.");
+                    }
+                    break;
 
-                System.out.println("Informe o seu nome completo: ");
-                String holder1 = sc.nextLine();
+                case 2:
+                    System.out.println(" - Cadastro de conta poupança -");
 
-                System.out.println("Informe seu CPF: ");
-                String cpf1 = sc.nextLine();
+                    System.out.println("Informe o seu nome completo: ");
+                    String holder1 = sc.nextLine();
 
-                System.out.println("Informe seu número de telefone: ");
-                String phone1 = sc.nextLine();
+                    System.out.println("Informe seu CPF: ");
+                    String cpf1 = sc.nextLine();
 
-                System.out.println("Digite o número de sua conta: ");
-                int num1 = sc.nextInt();
+                    System.out.println("Informe seu número de telefone: ");
+                    String phone1 = sc.nextLine();
 
-                System.out.println("Informe o número de sua agência: ");
-                int agency1 = sc.nextInt();
+                    System.out.println("Digite o número de sua conta: ");
+                    int num1 = sc.nextInt();
 
-                System.out.println("Digite seu saldo inicial: ");
-                double balance1 = sc.nextDouble();
+                    System.out.println("Informe o número de sua agência: ");
+                    int agency1 = sc.nextInt();
 
-                System.out.println("Digite a taxa de rendimento: ");
-                double yeldRate = sc.nextDouble();
+                    System.out.println("Digite seu saldo inicial: ");
+                    double balance1 = sc.nextDouble();
 
-                Map<String, Object> dados1 = new HashMap<>();
-                dados1.put("name", holder1);
-                dados1.put("cpf", cpf1);
-                dados1.put("phone", phone1);
-                dados1.put("number", num1);
-                dados1.put("agency", agency1);
-                dados1.put("balance", balance1);
-                dados1.put("taxaRendimento", yeldRate);
-                dados1.put("type", "POUPANCA");
+                    System.out.println("Digite a taxa de rendimento: ");
+                    double yeldRate = sc.nextDouble();
+                    sc.nextLine();
 
-                bankService.createAccount(dados1);
-                System.out.println("Conta criada e salva!");
-                break;
+                    Map<String, Object> dados1 = new HashMap<>();
+                    dados1.put("name", holder1);
+                    dados1.put("cpf", cpf1);
+                    dados1.put("phone", phone1);
+                    dados1.put("number", num1);
+                    dados1.put("agency", agency1);
+                    dados1.put("balance", balance1);
+                    dados1.put("taxaRendimento", yeldRate);
+                    dados1.put("type", "POUPANCA");
 
-            default:
-                System.out.println("Opção inválida.");
-                break;
+                    bankService.createAccount(dados1);
+                    System.out.println("Conta criada e salva!");
+
+                    System.out.println("Deseja voltar? s/n");
+                    resp = sc.nextLine();
+                    if (resp.equalsIgnoreCase("s")) {
+                        run = true;
+                    }
+                     else if (resp.equalsIgnoreCase("n")) {
+                         run = false;
+                         System.out.println ("Programa encerrado.");
+                    }
+                     break;
+
+                default:
+                    System.out.println("Opção inválida.");
+                    break;
+
+                case 3:
+                    System.out.println ("Entre em sua conta.");
+                    System.out.println ("Informe o número de sua conta: ");
+                    int n = sc.nextInt();
+
+
+            }
         }
 
         sc.close();
