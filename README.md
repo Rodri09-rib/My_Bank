@@ -6,6 +6,8 @@
 
 Este projeto consiste num sistema bancário didático desenvolvido 100% em Java puro, sem a utilização de frameworks ou bases de dados externas. O seu principal propósito é ensinar na prática os pilares da Orientação a Objetos, como o encapsulamento, a herança e o polimorfismo.
 
+O projeto encontra-se organizado numa arquitetura de camadas para evitar "código esparguete" e facilitar a manutenção.
+
 ## Modelo conceitual
 ![]()<img width="2816" height="1536" alt="mybank" src="https://github.com/user-attachments/assets/d2bdd5ce-ac88-44d2-bb4a-62b02c4493bf" />
 
