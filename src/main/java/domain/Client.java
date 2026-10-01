@@ -6,11 +6,10 @@ public class Client {
     private String cpf;
     private String phone;
 
-    public Client(){
-
+    public Client() {
     }
 
-    public Client (String name, String cpf, String phone){
+    public Client(String name, String cpf, String phone) {
         this.name = name;
         this.cpf = cpf;
         this.phone = phone;
@@ -38,5 +37,10 @@ public class Client {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente " + name + " | CPF " + cpf + " | Telefone " + phone;
     }
 }
