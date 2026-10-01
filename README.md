@@ -1,8 +1,22 @@
-# My_Bank
+# Projeto My Bank.
+[![Licença MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/Rodri09-rib/My_Bank/blob/main/LICENSE)
 
-My Bank é um projeto realizado em Java, que simula um aplicativo bancário, onde as interações ocorrem através do terminal. Os dados ficam apenas em memória: ao encerrar o programa, tudo é perdido.
+# Sobre o projeto
 
-## Como executar
+
+Este projeto consiste num sistema bancário didático desenvolvido 100% em Java puro, sem a utilização de frameworks ou bases de dados externas. O seu principal propósito é ensinar na prática os pilares da Orientação a Objetos, como o encapsulamento, a herança e o polimorfismo.
+
+O projeto encontra-se organizado numa arquitetura de camadas para evitar "código esparguete" e facilitar a manutenção.
+
+My Bank simula um aplicativo bancário cujas interações ocorrem através do terminal. Os dados ficam apenas em memória: ao encerrar o programa, tudo é perdido.
+
+## Modelo conceitual
+![]()<img width="2816" height="1536" alt="mybank" src="https://github.com/user-attachments/assets/d2bdd5ce-ac88-44d2-bb4a-62b02c4493bf" />
+
+
+
+
+# Como executar
 
 Requer JDK 17+ e Maven.
 
@@ -38,15 +52,25 @@ Dentro da conta: `1` depositar, `2` sacar, `3` ver dados, `4` aplicar rendimento
 
 ```
 src/
-  application/Program.java          menu do terminal e leitura de entrada
-  service/BankService.java          regras de negócio e validações
-  service/BankException.java        exceção de negócio (RuntimeException)
-  repository/RepositoryAccount.java armazenamento em memória
-  domain/Account.java               conta abstrata (número, agência, saldo, titular)
-  domain/CheckingAccount.java       conta corrente, com limite de saque
-  domain/SavingsAccount.java        conta poupança, com rendimento
-  domain/Client.java                titular
-src/test/java/                      testes JUnit 5
+  main/java/application/Program.java          menu do terminal e leitura de entrada
+  main/java/service/BankService.java          regras de negócio e validações
+  main/java/service/BankException.java        exceção de negócio (RuntimeException)
+  main/java/repository/RepositoryAccount.java armazenamento em memória
+  main/java/domain/Account.java               conta abstrata (número, agência, saldo, titular)
+  main/java/domain/CheckingAccount.java       conta corrente, com limite de saque
+  main/java/domain/SavingsAccount.java        conta poupança, com rendimento
+  main/java/domain/Client.java                titular
+  test/java/                                   testes JUnit 5
 ```
 
 O `BankService` é quem decide o que é erro de negócio e o `Program` é quem exibe as mensagens: nenhuma camada de domínio ou repositório imprime no console.
+
+# Tecnologias utilizadas
+## Back end
+- Java 21 ☕
+
+# Autor
+
+Rodrigo Ribeiro Ferreira
+
+https://www.linkedin.com/in/rodrigo-ribeiro-abbb713aa?utm_source=share_via&utm_content=profile&utm_medium=member_ios
